@@ -1,5 +1,5 @@
 INSTALL_DIR = /usr/bin/
-user := $(whoami)
+user := $(shell whoami)
 INNAME = /home/{user}/zxfetch/zxfetch
 
 help:
