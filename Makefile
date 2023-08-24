@@ -1,14 +1,15 @@
 INSTALL_DIR = /usr/bin/
-INNAME = mincfetch.c
-OUTNAME = zxfetch
+user := $(whoami)
+INNAME = /home/{user}/zxfetch/zxfetch
 
 help:
-  @echo "make install    Install zxfetch"
-  @echo "make uninstall  Uninstall zxfetch"
+    @echo "make install      Install zxfetch."
+    @echo "make uninstall    Remove zxfetch."
 
 install:
-  cp ${INNAME} ${INSTALL_DIR} ${OUTNAME}
-  cc mincfetch.c -o zxfetch
-
+    cc mincfetch.c -o zxfetch
+    cp ${INNAME} ${INSTALL_DIR}
+ 
+   
 uninstall:
-  rm ${INSTALL_DIR} ${INNAME} ${OUTNAME}
+    rm ${INSTALL_DIR}${INNAME}
