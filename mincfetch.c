@@ -1,7 +1,7 @@
 #include<stdio.h>
-#include <string.h>
-#include <time.h>
-#include <sys/sysinfo.h>
+#include<string.h>
+#include<time.h>
+#include<sys/sysinfo.h>
 
 #define ANSI_COLOR_RED     "\x1b[31m"
 #define ANSI_COLOR_GREEN   "\x1b[32m"
@@ -11,11 +11,11 @@
 #define ANSI_COLOR_CYAN    "\x1b[36m"
 #define ANSI_COLOR_RESET   "\x1b[0m"
 
-char operating_system[20];
+char operating_system[15];
 time_t rawtime;
 struct tm * timeinfo;
-long int sytem_uptime;
-unsigned long machine_ram;
+long int SytemUptime;
+unsigned long MachRam;
 
 int DetectOs() {
     
@@ -42,8 +42,8 @@ void RESUM() {
     timeinfo = localtime ( &rawtime );
     struct sysinfo info;
     sysinfo(&info);
-    long int sytem_uptime = info.uptime;
-    unsigned long machine_ram = info.totalram;
+    long int SytemUptime = info.uptime;
+    unsigned long MachRam = info.totalram;
     printf(ANSI_COLOR_RED"+++++yyyyyyyyyyyyyyyyyyyyyy\n");
     printf(ANSI_COLOR_BLUE"                        y+\n");
     printf(ANSI_COLOR_MAGENTA"                       y+\n");
@@ -54,8 +54,8 @@ void RESUM() {
     printf(ANSI_COLOR_CYAN"                  y+\n");
     printf(ANSI_COLOR_RED"                 y+              OS: %s\n", operating_system);
     printf(ANSI_COLOR_YELLOW"                y+               Time: %s", asctime(timeinfo));
-    printf(ANSI_COLOR_GREEN"               y+                Uptime: %ld\n", sytem_uptime);
-    printf(ANSI_COLOR_MAGENTA"              y+                 RAM: %lu\n", machine_ram);
+    printf(ANSI_COLOR_GREEN"               y+                Uptime: %ld\n", SytemUptime);
+    printf(ANSI_COLOR_MAGENTA"              y+                 RAM: %lu\n", MachRam);
     printf(ANSI_COLOR_BLUE"             y+\n");
     printf(ANSI_COLOR_RED"            y+\n");
     printf(ANSI_COLOR_CYAN"           y+\n");
