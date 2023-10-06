@@ -2,72 +2,40 @@
 #include<string.h>
 #include<time.h>
 #include<sys/sysinfo.h>
+#include <stdlib.h>
+#include "config.h"
 
-#define ANSI_COLOR_RED     "\x1b[31m"
-#define ANSI_COLOR_GREEN   "\x1b[32m"
-#define ANSI_COLOR_YELLOW  "\x1b[33m"
-#define ANSI_COLOR_BLUE    "\x1b[34m"
-#define ANSI_COLOR_MAGENTA "\x1b[35m"
-#define ANSI_COLOR_CYAN    "\x1b[36m"
-#define ANSI_COLOR_RESET   "\x1b[0m"
-
-char operating_system[15];
 time_t rawtime;
 struct tm * timeinfo;
 long int SytemUptime;
 unsigned long MachRam;
+char usr[] = system("whoami")
 
-int DetectOs() {
-    
-    #ifdef __linux__
-    strcpy(operating_system, "Linux");
-    #elif __APPLE__
-    strcpy(operating_system, "MacOs");
-    #elif __ANDROID__ 
-    strcpy(operating_system, "Android");
-    #elif __unix__ 
-    strcpy(operating_system, "Unix");
-    #elif _POSIX_VERSION
-    strcpy(operating_system, "Posix");
-    #elif BSD
-    strcpy(operating_system, "BSD");
-    #else
-    strcpy(operating_system, "Not found");
-    #endif
-    return 0;
-}
-
-void RESUM() {
+void main() {
     time ( &rawtime );
     timeinfo = localtime ( &rawtime );
     struct sysinfo info;
     sysinfo(&info);
     long int SytemUptime = info.uptime;
     unsigned long MachRam = info.totalram;
-    printf(ANSI_COLOR_RED"+++++yyyyyyyyyyyyyyyyyyyyyy\n");
-    printf(ANSI_COLOR_BLUE"                        y+\n");
-    printf(ANSI_COLOR_MAGENTA"                       y+\n");
-    printf(ANSI_COLOR_CYAN"                      y+\n");
-    printf(ANSI_COLOR_YELLOW"                     y+\n");
-    printf(ANSI_COLOR_GREEN"                    y+\n");
-    printf(ANSI_COLOR_MAGENTA"                   y+\n");
-    printf(ANSI_COLOR_CYAN"                  y+\n");
-    printf(ANSI_COLOR_RED"                 y+              OS: %s\n", operating_system);
-    printf(ANSI_COLOR_YELLOW"                y+               Time: %s", asctime(timeinfo));
-    printf(ANSI_COLOR_GREEN"               y+                Uptime: %ld\n", SytemUptime);
-    printf(ANSI_COLOR_MAGENTA"              y+                 RAM: %lu\n", MachRam);
-    printf(ANSI_COLOR_BLUE"             y+\n");
-    printf(ANSI_COLOR_RED"            y+\n");
-    printf(ANSI_COLOR_CYAN"           y+\n");
-    printf(ANSI_COLOR_YELLOW"          y+\n");
-    printf(ANSI_COLOR_GREEN"         y+\n");
-    printf(ANSI_COLOR_MAGENTA"        y+\n");
-    printf(ANSI_COLOR_BLUE"       y+\n");
-    printf(ANSI_COLOR_YELLOW"      yyyyyyyyyyyyyyyyyyyyyy+++++\n");
-}
-
-int main() {
-    DetectOs();
-    RESUM();
-   return 0;
+    printf(ANSIRED"+++++yyyyyyyyyyyyyyyyyyyyyy\n");
+    printf(ANSIBLUE"                        y+\n");
+    printf(ANSIMAGENTA"                       y+\n");
+    printf(ANSICYAN"                      y+\n");
+    printf(ANSIYELLOW"                     y+\n");
+    printf(ANSIGREEN"                    y+\n");
+    printf(ANSIMAGENTA"                   y+\n");
+    printf(ANSICYAN"                  y+\n");
+    printf(ANSIRED"                 y+              OS: %s\n", OS);
+    printf(ANSIYELLOW"                y+               Time: %s", asctime(timeinfo));
+    printf(ANSIGREEN"               y+                Uptime: %ld\n", SytemUptime);
+    printf(ANSIMAGENTA"              y+                 RAM: %lu\n", MachRam);
+    printf(ANSIBLUE"             y+\n");
+    printf(ANSIRED"            y+\n");
+    printf(ANSICYAN"           y+\n");
+    printf(ANSIYELLOW"          y+\n");
+    printf(ANSIGREEN"         y+\n");
+    printf(ANSIMAGENTA"        y+\n");
+    printf(ANSIBLUE"       y+\n");
+    printf(ANSIYELLOW"      yyyyyyyyyyyyyyyyyyyyyy+++++\n");
 }
