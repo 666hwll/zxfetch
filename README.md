@@ -7,5 +7,7 @@ A custom screenfetch script written in C, that aims to become lightweight and fa
 
 ### How to run on windows ?
 Use wsl or a hypervisor program
-compile it with: gcc -o zxfetch mincfetch.c
-  
+compile it with: 
+``` bash
+gcc -o zxfetch mincfetch.c
+```
