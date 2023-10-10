@@ -2,14 +2,12 @@
 #include<string.h>
 #include<time.h>
 #include<sys/sysinfo.h>
-#include <stdlib.h>
 #include "config.h"
 
 time_t rawtime;
 struct tm * timeinfo;
 long int SytemUptime;
 unsigned long MachRam;
-char usr[] = system("whoami")
 
 void main() {
     time ( &rawtime );
