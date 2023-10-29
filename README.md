@@ -1,9 +1,8 @@
 ### zxfetch
-A custom screenfetch script written in C, that aims to become lightweight and fast.
+A custom screenfetch script written in C
 
 ### Goals
-- make it simple
-- seamless integration into the most posix systems
+#### There are no Goals as i wrote this in less than 10 minutes lol
 
 ### How to run on windows ?
 Use wsl or a hypervisor program
