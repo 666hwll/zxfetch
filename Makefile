@@ -12,4 +12,4 @@ install:
  
    
 uninstall:
-	rm ${INSTALL_DIR}${INNAME}
+	rm ${INSTALL_DIR}${OUTNAME}
