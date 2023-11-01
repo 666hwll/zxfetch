@@ -7,9 +7,9 @@ help:
 	@echo "make uninstall    Remove zxfetch."
 
 install:
-	cc ${INNAME} -o ${OUTNAME}
-	cp ${OUTNAME} ${INSTALL_DIR}
+	$(CC) $(INNAME) -o $(OUTNAME)
+	sudo cp $(OUTNAME $(INSTALL_DIR)
  
    
 uninstall:
-	rm ${INSTALL_DIR}${OUTNAME}
+	sudo rm $(INSTALL_DIR)/$(OUTNAME)
