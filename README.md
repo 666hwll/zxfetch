@@ -10,4 +10,4 @@ make install
 ```
 
 ### How to run on windows ?
-Use wsl or a hypervisor program
+--> switch to unix like operating systems
