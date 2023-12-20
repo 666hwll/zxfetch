@@ -1,5 +1,4 @@
 INSTALL_DIR = /usr/bin/
-INNAME = mincfetch.c
 OUTNAME = zxfetch
 
 help:
@@ -7,8 +6,8 @@ help:
 	@echo "make uninstall    Remove zxfetch."
 
 install:
-	$(CC) $(INNAME) -o $(OUTNAME)
-	sudo cp $(OUTNAME $(INSTALL_DIR)
+	$(CC) mincfetch.c -o $(OUTNAME)
+	sudo cp $(OUTNAME) $(INSTALL_DIR)
  
    
 uninstall:
