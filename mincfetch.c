@@ -9,26 +9,29 @@ void printSep() {
 }
 
 void displayFetch(){
-    printf(ANSIRED"+++++yyyyyyyyyyyyyyyyyyyyyy\n");
-    printf(ANSIBLUE"                        y+\n");
-    printf(ANSIMAGENTA"                       y+\n");
-    printf(ANSICYAN"                      y+\n");
-    printf(ANSIYELLOW"                     y+\n");
-    printf(ANSIGREEN"                    y+\n");
-    printf(ANSIMAGENTA"                   y+\n");
-    printf(ANSICYAN"                  y+\n");
-    printf(ANSIRED"                 y+\n");
-    printf(ANSIYELLOW"                y+\n");
-    printf(ANSIGREEN"               y+\n");
-    printf(ANSIMAGENTA"              y+\n");
-    printf(ANSIBLUE"             y+\n");
-    printf(ANSIRED"            y+\n");
-    printf(ANSICYAN"           y+\n");
-    printf(ANSIYELLOW"          y+\n");
-    printf(ANSIGREEN"         y+\n");
-    printf(ANSIMAGENTA"        y+\n");
-    printf(ANSIBLUE"       y+\n");
-    printf(ANSIYELLOW"      yyyyyyyyyyyyyyyyyyyyyy+++++\n");
+    char *logo = ANSIRED"+++++yyyyyyyyyyyyyyyyyyyyyy\n"
+    ANSIBLUE"                        y+\n"
+    ANSIMAGENTA"                       y+\n"
+    ANSICYAN"                      y+\n"
+    ANSIYELLOW"                     y+\n"
+    ANSIGREEN"                    y+\n"
+    ANSIMAGENTA"                   y+\n"
+    ANSICYAN"                  y+\n"
+    ANSIRED"                 y+\n"
+    ANSIYELLOW"                y+\n"
+    ANSIGREEN"               y+\n"
+    ANSIMAGENTA"              y+\n"
+    ANSIBLUE"             y+\n"
+    ANSIRED"            y+\n"
+    ANSICYAN"           y+\n"
+    ANSIYELLOW"          y+\n"
+    ANSIGREEN"         y+\n"
+    ANSIMAGENTA"        y+\n"
+    ANSIBLUE"       y+\n"
+    ANSIYELLOW"      yyyyyyyyyyyyyyyyyyyyyy+++++\n";
+
+  // Print the logo
+  printf("%s", logo);
 }
 
 time_t rawtime;
@@ -53,3 +56,4 @@ void main() {
     printSep();
     inf();
 }
+
