@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# Navigate to the directory containing the script
+cd "$(dirname "$0")"
+
+# Compile the C file
+gcc -o zxfetch mincfetch.c -lselinux
+
+# Remove the C file
+rm mincfetch.c
+rm config.h
+
+sudo cp zxfetch /usr/bin
+
+# Print a message
+echo "Running script"
+

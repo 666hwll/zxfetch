@@ -1,0 +1,5 @@
+Package: zxfetch
+Version: 1.0
+Architecture: amd64
+Maintainer: darwin zmugg
+Description: fetch script to render information
