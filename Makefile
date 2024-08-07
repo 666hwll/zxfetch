@@ -6,9 +6,12 @@ help:
 	@echo "make uninstall    Remove zxfetch."
 
 install:
-	$(CC) mincfetch.c -o $(OUTNAME)
+	$(CC) mincfetch.c -o $(OUTNAME) -lselinux
 	sudo cp $(OUTNAME) $(INSTALL_DIR)
  
    
 uninstall:
 	sudo rm $(INSTALL_DIR)/$(OUTNAME)
+
+deb:
+	dpkg-deb --build --root-owner-group zxfetch
