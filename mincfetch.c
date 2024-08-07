@@ -1,7 +1,9 @@
-#include<stdio.h>
-#include<string.h>
-#include<time.h>
-#include<sys/sysinfo.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+#include <sys/sysinfo.h>
+#include <selinux/selinux.h>
 #include "config.h"
 
 void printSep() {
@@ -42,10 +44,17 @@ time ( &rawtime );
     timeinfo = localtime ( &rawtime );
     struct sysinfo info;
     sysinfo(&info);
-    printf(ANSICYAN"%s\n", OS);
+    int seclin = is_selinux_enabled();
+    // ANSIBLUE
+    printf(ANSICYAN"%s@%s on %s\n", getenv("USER"), getenv("HOSTNAME"), OS);
     printf(ANSIMAGENTA"%s",asctime(timeinfo));
     printf(ANSIGREEN"UP:%ld\n",info.uptime);
-    printf(ANSIYELLOW"RAM:%ld\n"ANSIRESET,info.totalram);
+    printf(ANSIYELLOW"RAM:%ld\n",info.totalram);
+    printf(ANSIRED"SHELL:%s\n", getenv("SHELL"));
+    printf(ANSIBLUE"SELINUX:%d\n", seclin);
+    //printf(ANSIBLUE"PATH:%s\n", getenv("PATH"));
+    //printf(ANSICYAN"TERM:%s\n", getenv("TERM"));
+    //printf(ANSIMAGENTA"COLORTERM:%s\n"ANSIRESET, getenv("COLORTERM"));
 }
 
 
